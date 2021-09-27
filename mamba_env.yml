@@ -1,0 +1,7 @@
+name: mamba_env
+channels:
+  - conda-forge
+dependencies:
+  - python >= 3.8
+  - jupyter
+  - nb_conda_kernels
