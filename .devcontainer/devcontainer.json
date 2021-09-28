@@ -39,14 +39,18 @@
 		"eamodio.gitlens",
 		"mechatroner.rainbow-csv",
 		"github.copilot",
-		"dzhavat.git-cheatsheet"
+		"dzhavat.git-cheatsheet",
+		"njpwerner.autodocstring",
+		"gruntfuggly.todo-tree",
+		"yzhang.markdown-all-in-one"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "python --version",
+	"postCreateCommand": "conda config --add envs_dirs /micromamba/envs",
+
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"

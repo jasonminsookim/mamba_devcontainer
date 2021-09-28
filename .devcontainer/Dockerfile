@@ -15,17 +15,8 @@ COPY mamba_env.yml* .devcontainer/noop.txt /tmp/
 RUN wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
 ENV MAMBA_ROOT_PREFIX=$HOME/micromamba
 
-
+# Create the mamba_env from the .yml file.
 RUN micromamba create -y -f tmp/mamba_env.yml
-
-SHELL ["/bin/bash", "-c"]
-RUN ./bin/micromamba shell init -s bash -p ~/micromamba
-RUN source ~/.bashrc
-RUN conda config --add envs_dirs /micromamba/envs/
-
-ENTRYPOINT ["/bin/bash", "-c"]
-# RUN micromamba activate mamba_env
-
 # [Optional] Uncomment to install a different version of Python than the default
 # RUN conda install -y python=3.6 \
 #     && pip install --no-cache-dir pipx \
